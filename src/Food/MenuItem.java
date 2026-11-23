@@ -1,5 +1,6 @@
 package Food;
 
+// permits = sealed classes, only allows certain classes to extend from this class
 public sealed abstract class MenuItem permits Foods, Drinks, Desserts {
     private final int id;
     private final String name;
