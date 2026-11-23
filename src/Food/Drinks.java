@@ -8,5 +8,8 @@ public final class Drinks extends MenuItem {
         this.hot = hot;
     }
 
-    public boolean isHot() {return hot ? "Yes" : "No"; }
+    public Boolean isHot() {return hot; }
+
+    @Override // for polymorphism and super. 
+    public String toString() { return super.toString() + (hot ? " (hot)" : "");}
 }

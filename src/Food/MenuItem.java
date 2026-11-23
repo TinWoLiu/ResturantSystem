@@ -15,5 +15,6 @@ public sealed abstract class MenuItem permits Foods, Drinks, Desserts {
     public String getName() { return name;}
     public double getPrice() { return price;}
 
-
+    @Override 
+    public String toString() { return getName() + " - " + getPrice();}
 }

@@ -10,6 +10,11 @@ public final class Foods extends MenuItem {
         this.glutenFree= glutenFree;
     }
 
-    public boolean isSpicy() { return spicy ? "Yes" : "No"; }
-    public boolean isGlutenFree() { return glutenFree ? "Yes" : "No"; }
+    public boolean isSpicy() { return spicy;}
+    public boolean isGlutenFree() { return glutenFree; }
+
+    @Override // for polymorphism and super.
+    public String toString() { 
+        return super.toString() + (spicy ? "(Spicy)" : "") + (glutenFree ? "(Gluten Free)" : ""); 
+    }
 }
