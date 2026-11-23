@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 public final class Money implements Comparable<Money>{
 
     //initial object
+    //alternative BigDecimal(0)
     public static final Money ZERO = new Money(BigDecimal.ZERO);
 
     private final BigDecimal amount;
@@ -20,10 +21,15 @@ public final class Money implements Comparable<Money>{
     public static Money of(String amount) { return new Money(new BigDecimal(amount)); }
     public static Money of(double amount) { return new Money(BigDecimal.valueOf(amount)); }
 
+    //arthmetic 
     public Money plus(Money m) {return new Money(amount.add(m.amount));}
     public Money minus(Money m) {return new Money(amount.subtract(m.amount));}
     public Money times(int m) {return new Money(amount.multiply(BigDecimal.valueOf(m)));}
     public Money times(double m) {return new Money(amount.multiply(BigDecimal.valueOf(m)));}
+    
+    //rejecting negative menu prices
+    //underpaid cash
+    public boolean isNegative() {return amount.signum() < 0;}
     
     public BigDecimal getAmount() {return amount;}
 
