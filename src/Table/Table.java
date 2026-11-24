@@ -29,6 +29,7 @@ public class Table {
     }
 
     public void seat(int guests) throws TableOccupiedException, TooManyGuestsException{
+        try {
         if (status == TableStatus.OCCUPIED) {
             throw new TableOccupiedException(number);
         }
@@ -38,6 +39,9 @@ public class Table {
         if (guests > capacity) {
             throw new TooManyGuestsException(guests, capacity);
         }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Input must be a number");
+        } 
 
         this.guests = guests;
         status = TableStatus.OCCUPIED;
