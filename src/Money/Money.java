@@ -26,6 +26,8 @@ public final class Money implements Comparable<Money>{
     public Money minus(Money m) {return new Money(amount.subtract(m.amount));}
     public Money times(int m) {return new Money(amount.multiply(BigDecimal.valueOf(m)));}
     public Money times(double m) {return new Money(amount.multiply(BigDecimal.valueOf(m)));}
+    public Money division(int m) {return new Money(amount.divide(BigDecimal.valueOf(m)));}
+    public Money division(double m) {return new Money(amount.divide(BigDecimal.valueOf(m)));}
     
     //rejecting negative menu prices
     //underpaid cash
