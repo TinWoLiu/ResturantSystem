@@ -30,15 +30,15 @@ public class Table {
 
     public void seat(int guests) throws TableOccupiedException, TooManyGuestsException{
         try {
-        if (status == TableStatus.OCCUPIED) {
-            throw new TableOccupiedException(number);
-        }
-        if (guests <= 0) {
-            throw new IllegalArgumentException("Guests must be at least 1");
-        }
-        if (guests > capacity) {
-            throw new TooManyGuestsException(guests, capacity);
-        }
+            if (status == TableStatus.OCCUPIED) {
+                throw new TableOccupiedException(number);
+            }
+            if (guests <= 0) {
+                throw new IllegalArgumentException("Guests must be at least 1");
+            }
+            if (guests > capacity) {
+                throw new TooManyGuestsException(guests, capacity);
+            }
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Input must be a number");
         } 

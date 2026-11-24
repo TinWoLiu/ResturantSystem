@@ -1,9 +1,11 @@
 package Food;
 
+import Money.Money;
+
 public final class Drinks extends MenuItem {
     private final boolean hot;
 
-    public Drinks (int id, String name, double price, boolean hot) {
+    public Drinks (int id, String name, Money price, boolean hot) {
         super (id, name, price);
         this.hot = hot;
     }

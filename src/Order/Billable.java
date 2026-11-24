@@ -21,11 +21,12 @@ public interface Billable {
 
     static Money sum(List<? extends Billable> bills) {
     //List< ? extends Billable>, every list that implements billable
-    Money result = Money.ZERO;
-    for (Billable b : bills) {
-        result = result.plus(b.total());
+        Money result = Money.ZERO;
+            for (Billable b : bills) {
+                result = result.plus(b.total());
+            }
+        return result;
     }
-    return result;
-}
 
 }
+
