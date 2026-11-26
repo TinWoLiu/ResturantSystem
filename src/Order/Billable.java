@@ -18,7 +18,7 @@ public interface Billable {
         return addPercent (total(), tipRate);
     }
 
-
+    
     static Money sum(List<? extends Billable> bills) {
     //List< ? extends Billable>, every list that implements billable
         Money result = Money.ZERO;
