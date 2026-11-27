@@ -39,6 +39,7 @@ public class Restaurant {
         getTable(tableNumber).seat(guests);
     }
 
+    //switch case and pattern matching
     public String pay(int tableNumber, Payment payment) {
         Table table = getTable(tableNumber);
 

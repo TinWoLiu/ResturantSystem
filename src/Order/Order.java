@@ -51,7 +51,7 @@ public class Order implements Billable{
         lines.add(new OrderLine(item, quantity));
     }
 
-    //vararg
+    // vararg
     public void addAll(MenuItem... items){
         for (MenuItem item : items) {
             add(item);

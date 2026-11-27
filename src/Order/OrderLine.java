@@ -4,7 +4,8 @@ import Food.MenuItem;
 import Money.Money;
 
 //record, immutable data classes that only needs type and name of field
-//regular class requires you to create constructor and getters, record does it automatically
+//regular class requires you to create constructor and getters, 
+//record does it automatically
 public record OrderLine(MenuItem item, int quantity) {
 
     public OrderLine {
