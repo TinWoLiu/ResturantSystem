@@ -44,4 +44,13 @@ public class Menu {
     private static String yesNo(boolean b) {
         return b ? "Yes" : "No";
     }
+
+    public MenuItem findById(int id) {
+    for (MenuItem item : items) {
+        if (item.getId() == id) {
+            return item;
+        }
+    }
+    throw new IllegalArgumentException("No menu item with ID " + id);
+}
 }
