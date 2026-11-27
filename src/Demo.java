@@ -20,6 +20,7 @@ public class Demo {
 
         story1_viewTables(restaurant);
         story2_seatParty(restaurant);
+        story3_addToOrder(restaurant);
     }
 
     private static void setUpMenu() {
@@ -75,7 +76,17 @@ public class Demo {
 
     private static void story3_addToOrder(Restaurant r) {
         System.out.println("Story 3: Add items to an order");
-        r.getTable(1).getOrder().add();
+        r.getTable(1).getOrder().add(r.getMenu().findById(2));
+        r.getTable(1).getOrder().add(r.getMenu().findById(5),2);
+        r.getTable(1).getOrder().addAll(r.getMenu().findById(4), 
+        r.getMenu().findById(4));
+        try {
+            r.getTable(1).getOrder().add(r.getMenu().findById(5), -1);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println(r.getTable(1).getOrder().receipt(1));
     }
 
     private static String label(Table t) {

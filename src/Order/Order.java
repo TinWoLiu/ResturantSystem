@@ -34,6 +34,9 @@ public class Order implements Billable{
     //for edit order, edit already exisiting item instead of adding a new
     //line of the same item
     public void add(MenuItem item, int quantity) {
+        if (quantity <= 0) {
+        throw new IllegalArgumentException("Quantity must be positive");
+        }
         //check exisiting item in the List
         for (int i = 0; i < lines.size(); i ++) {
             //check the id of the List
@@ -48,6 +51,7 @@ public class Order implements Billable{
         lines.add(new OrderLine(item, quantity));
     }
 
+    //vararg
     public void addAll(MenuItem... items){
         for (MenuItem item : items) {
             add(item);
